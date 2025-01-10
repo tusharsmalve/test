@@ -1,0 +1,486 @@
+/* Reset Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body and Default Styling */
+body {
+    font-family: Arial, sans-serif; /* Normal, professional font */
+    background-color: #1a1a1a; /* Dark theme for gaming café */
+    color: #fff;
+    line-height: 1.6;
+}
+
+/* Fixed Header */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #000;
+    padding: 10px 20px;
+    color: #fff;
+    position: fixed;  /* Make header fixed */
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    max-height: 80px;
+    margin: 0 auto;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+/* Logo Styling */
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo-img {
+    width: 130px; /* Balanced size for the logo */
+    height: auto;
+}
+
+/* Navigation Links */
+.nav-links ul {
+    display: flex;
+    justify-content: center;
+    gap: 15px; /* Slightly reduced gap */
+    list-style: none;
+}
+
+.nav-links a {
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 500;
+    text-decoration: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    transition: color 0.3s ease, background-color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: #FFD700;
+    background-color: rgba(255, 215, 0, 0.2);
+}
+
+
+/* Hamburger Menu Styling */
+/* Hamburger Menu Styling */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    z-index: 20;
+    position: relative;
+    width: 30px;
+    height: 25px;
+    justify-content: center;
+    align-items: center;
+}
+
+.hamburger div {
+    width: 30px;
+    height: 3px;
+    background-color: #fff;
+    margin: 4px 0;
+    transition: all 0.3s ease;
+}
+
+/* Triangle Animation on Click */
+.hamburger.active div:nth-child(1) {
+    transform: rotate(45deg) translate(6px, 6px);
+}
+
+.hamburger.active div:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.active div:nth-child(3) {
+    transform: rotate(-45deg) translate(6px, -6px);
+}
+
+/* Restore Three Lines When Closed */
+.hamburger div {
+    transition: all 0.3s ease;
+}
+
+
+/* Full-Screen Overlay Menu */
+.nav-overlay {
+    display: none;
+    flex-direction: column;
+    align-items: center; /* Center align items */
+    justify-content: flex-start; /* Start at the top */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.95); /* Dark semi-transparent background */
+    backdrop-filter: blur(10px); /* Modern blur effect */
+    padding: 80px 20px; /* Top padding to leave space for the header */
+    transform: translateY(-100%);
+    transition: transform 0.5s ease-in-out; /* Smooth slide-in transition */
+    z-index: 10;
+}
+
+.nav-overlay.active {
+    display: flex;
+    transform: translateY(0); /* Slide-in effect */
+}
+
+.nav-overlay ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center items horizontally */
+    gap: 25px; /* Space between menu items */
+}
+
+.nav-overlay li {
+    margin: 0;
+}
+
+.nav-overlay a {
+    color: #fff;
+    font-size: 1.5rem; /* Bigger font for better visibility */
+    text-decoration: none;
+    padding: 10px 20px; /* Padding for clickable area */
+    transition: color 0.3s ease, background-color 0.3s ease;
+    border-radius: 5px; /* Rounded edges for a modern look */
+}
+
+.nav-overlay a:hover {
+    color: #FFD700; /* Golden hover effect */
+    background-color: rgba(255, 255, 255, 0.2); /* Subtle hover background */
+}
+
+/* Change to triangle animation */
+.hamburger.active div:nth-child(1) {
+    transform: rotate(45deg) translate(6px, 6px);
+}
+
+.hamburger.active div:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.active div:nth-child(3) {
+    transform: rotate(-45deg) translate(6px, -6px);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+    }
+
+    .hamburger {
+        display: flex;
+    }
+}
+
+@media (min-width: 769px) {
+    /* Hide overlay menu on larger screens */
+    .nav-overlay {
+        display: none;
+        transform: translateY(-100%);
+    }
+
+    .hamburger {
+        display: none;
+    }
+
+    .nav-links {
+        display: flex;
+    }
+}
+
+
+@media (max-width: 480px) {
+    .nav-overlay a {
+        font-size: 1rem; /* Smaller font for compact devices */
+    }
+
+    .hamburger div {
+        width: 20px;
+        height: 2.5px;
+    }
+
+    .header {
+        padding: 10px; /* Compact header for mobile */
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Main Section Styling */
+.intro-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #000;
+    padding: 50px 5%;
+    color: white;
+    position: relative;
+    flex-wrap: wrap;
+    margin-top: 5rem;;
+}
+
+.intro-content {
+    text-align: center;
+    z-index: 10;
+    width: 100%;
+    max-width: 50%;
+}
+
+.intro-content h2 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    font-weight: bold;
+    color: #f5f5f5;
+    text-transform: uppercase;
+}
+
+
+/* Styling for the dynamic text container */
+#dynamic-text-container {
+    display: inline-block; /* Box size adjusts to the text */
+    white-space: nowrap; /* Prevent text from wrapping */
+    background-color: white; /* White background for the box */
+    padding: 0 10px 0 10px; /* Only add horizontal padding */
+    border-radius: 2px; /* Rounded corners for the box */
+    line-height: 1;
+}
+
+/* Styling for the dynamic text */
+#dynamic-text {
+    color: black; /* Black text */
+    display: inline-block;
+    white-space: nowrap;
+    opacity: 1;
+    transition: opacity 0.3s ease-in-out; /* Quick fade effect */
+}
+
+
+/* Styling for the logo slider section */
+.logo-slider {
+    width: 100%;
+    overflow: hidden;
+    margin: 20px 0; /* Space between the text and the logo slider */
+    padding: 10px 0;
+}
+
+/* Container for logos */
+.logo-container {
+    display: flex;
+    animation: moveLogos 10s linear infinite; /* Continuous animation for logos */
+}
+
+/* Styling for individual logos */
+.logo {
+    flex-shrink: 0; /* Prevent logos from shrinking */
+    width: 20vw; /* Set the width of each logo to be a percentage of the viewport width */
+    max-width: 120px; /* Set a maximum width to prevent logos from getting too large */
+    height: auto; /* Maintain the aspect ratio */
+    margin-right: 20px; /* Space between logos */
+    transition: transform 0.3s ease; /* Smooth transition on hover */
+}
+
+/* Animation for moving logos from right to left */
+@keyframes moveLogos {
+    0% {
+        transform: translateX(100%); /* Start from the right */
+    }
+    100% {
+        transform: translateX(-100%); /* Move to the left */
+    }
+}
+/* 
+.logo-slider:hover .logo-container {
+    animation-play-state: paused;
+}
+*/
+
+
+.left-image, .right-image {
+    position: absolute;
+    top: 50%;  /* Center images vertically */
+    transform: translateY(-50%);
+    width: 300px; /* Adjust width as needed */
+}
+
+.left-image {
+    width: 380px;
+    top: 140%;
+    left: 5%; /* Adjust as needed */
+}
+
+.right-image {
+    right: 5%; /* Adjust as needed */
+    top: 100%;
+}
+
+/* Character Image Container */
+.character-image-container {
+    position: relative;
+    width: 100%;
+    margin-top: -100px; /* Moves the images slightly below the intro section */
+}
+
+/* Character Image Styling */
+.character-image {
+    position: absolute;
+    z-index: 1;
+    width: 100%; /* Ensure images are responsive */
+}
+
+.character-image img {
+    width: 100%;
+    height: auto;
+    object-fit: cover; /* Ensures the image covers the full div without distortion */
+}
+
+/* Custom Image Positions */
+.image-2 {
+    right: 0;  /* Adjust this to place it as needed */
+    bottom: -800px;
+}
+
+.image-1 {
+    top: -100px;
+    left: 0;  /* Adjust as needed */
+}
+
+/* Responsive Media Query for Smaller Screens */
+@media (max-width: 1024px) {
+    .intro-section {
+        padding: 40px 3%;
+    }
+
+    .intro-content h2 {
+        font-size: 2.5rem;
+    }
+
+    /* Adjust carousel for tablet and smaller screens */
+    .logo {
+        width: 25vw; /* Smaller logos on tablets */
+    }
+
+    .logo-container {
+        animation: moveLogos 8s linear infinite; /* Faster animation on tablets */
+    }
+
+    .left-image, .right-image {
+        width: 200px;  /* Adjust image size for tablets */
+    }
+
+    .left-image {
+        width: 250px;
+        top: 130%;
+    }
+
+    .right-image {
+        top: 110%;
+    }
+}
+
+/* Responsive Media Query for Mobile Screens */
+@media (max-width: 768px) {
+    .intro-content {
+        max-width: 100%;
+    }
+
+    .intro-content h2 {
+        font-size: 2rem;
+    }
+
+    .logo {
+        width: 30vw; /* Even smaller logos for mobile */
+    }
+
+    .logo-container {
+        animation: moveLogos 6s linear infinite; /* Faster animation for mobile */
+    }
+
+
+
+    .left-image, .right-image {
+        width: 150px; /* Adjust image size for mobile */
+        top: 120%; /* Adjust vertical position */
+    }
+
+    .left-image {
+        left: 10%;
+    }
+
+    .right-image {
+        right: 10%;
+    }
+
+    
+}
+
+/* Mobile-first adjustments */
+@media (max-width: 480px) {
+    .intro-section {
+        flex-direction: column; /* Stack content and images */
+        text-align: center;
+        padding: 20px 10%;
+    }
+
+    .intro-content h2 {
+        font-size: 1.8rem;
+        margin-bottom: 15px;
+    }
+
+    .logo {
+        width: 35vw; /* Even smaller logos for very small screens */
+    }
+
+    .logo-container {
+        animation: moveLogos 5s linear infinite; /* Faster animation */
+    }
+
+    .left-image, .right-image {
+        width: 120px;  /* Further reduce image size for small screens */
+        top: 100%;     /* Adjust position for smaller screens */
+        left: 10%;
+        right: 10%;
+    }
+}
+
+
+
+/* Responsive Media Query for Mobile Screens */
+@media (max-width: 768px) {
+    .left-image, .right-image {
+        display: none; /* Hide images on small screens */
+    }
+}
+
